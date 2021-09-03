@@ -1,0 +1,90 @@
+<div class="contenedor">
+    <header class="header">
+        <div class="head_cont">
+            <figure>
+                <img src="{{pf}}" alt="">
+            </figure>
+            <p class="nombre">JAVIER DARIO GARZA RIOJAS</p>
+            <p class="job">DESARROLLADOR DE SOFTWARE</p>
+        </div>
+    </header>
+
+    <nav class="menu" id="menu" [ngClass]="{'menu-hid': propiedades.show, 'menu-nohid': !propiedades.show }">
+        <div class="menu-bar" id="menu-bar" (click)="propiedades.show = !propiedades.show; ">
+            <i class=" fas fa-bars"></i>
+        </div>
+        <div class="menutabla " id="menutabla" [ngClass]="{ 'menu-togglehid': propiedades.show, 'menu-notoggle': !propiedades.show } ">
+            <li (click)="ToPortafolio()">Portafolio</li>
+            <li (click)="ToSkills()">skills</li>
+            <li (click)="ToContact()">Contact</li>
+        </div>
+    </nav>
+    <div class="portafolio" id="portafolio">
+        <div class="portafolio-title">PORTAFOLIO</div>
+    </div>
+    <div class="projects">
+        <div class="projects1">
+            <div class="aproject" *ngFor="let item of aprojects; let i = index" id="{{'aprojects-'+ i}}">
+                <img src="{{item.url}}" alt="">
+                <h5>{{item.titulo}}</h5>
+                <p>{{item.desc}}</p>
+            </div>
+
+        </div>
+        <div class="projects2">
+            <div class="bproject" *ngFor="let item of bprojects; let i = index" id="{{'bprojects-'+ i}}">
+                <img src="{{item.url}}" alt="">
+                <h5>{{item.titulo}}</h5>
+                <p>{{item.desc}}</p>
+            </div>
+
+        </div>
+    </div>
+    <div class="skills-title" id="skills">SKILLS </div>
+    <div class="skills ">
+        <div *ngFor="let skill of askills " class="skill ">
+            <figure>
+                <img src={{skill.img}} alt=" ">
+            </figure>
+        </div>
+    </div>
+    <div class="contacto" id="contacto">
+        <h5>CONTACTO</h5>
+        <form>
+            <div class="wrapper">
+                <div class="box">
+                    <input type="text" name="frname" id="frname" placeholder="First name">
+                </div>
+            </div>
+            <div class="wrapper">
+                <div class="box">
+                    <input type="text" name="lname" id="lrname" placeholder="Last name">
+                </div>
+            </div>
+            <div class="wrapper">
+                <div class="box">
+                    <input type="text" name="tel" id="tel" placeholder="Tel...">
+                </div>
+            </div>
+            <div class="wrapper">
+                <div class="box">
+                    <input type="email" name="email" id="email" placeholder="email">
+                </div>
+            </div>
+            <div class="wrapper">
+                <div class="box">
+                    <textarea name="mes" id="mes" cols="30" rows="10" placeholder="Message..."></textarea>
+                </div>
+            </div>
+            <div class="btn-cont">
+                <input type="submit" name="" value="Send">
+            </div>
+        </form>
+    </div>
+    <footer class="footer ">
+        <div class="social">
+            <a href="https://www.facebook.com/xavierdariogarza.riojas"><img src="assets/img/facebook.png" alt="">Javier Dario Garza Riojas</a>
+            <a href="tel:+528641005775"><img src="assets/img/phone.png" alt="">8641005775</a>
+        </div>
+    </footer>
+</div>

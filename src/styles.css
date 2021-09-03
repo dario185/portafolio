@@ -1,0 +1,297 @@
+    /* You can add global styles to this file, and also import other style files */
+
+    body {
+        background: rgb(244, 245, 247);
+    }
+
+    .contenedor {
+        width: 100%;
+        display: grid;
+        grid-gap: 0px;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(7, auto);
+        grid-template-areas: "menu" "header" "portafolio" "projects" "skills-title" "skills" "contacto" "footer";
+    }
+
+    .contenedor .header {
+        grid-area: header;
+        background-color: #33373F;
+        height: auto;
+        width: 100%;
+    }
+
+    .contenedor .header .head_cont {
+        display: grid;
+        grid-gap: 10px;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(1, 1fr);
+        justify-items: center;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+
+    .contenedor .header .head_cont figure {
+        margin: 20px 0 0 0;
+        width: 150px;
+        height: 150px;
+    }
+
+    .contenedor .header .head_cont figure>img {
+        width: 100%;
+        height: 100%;
+    }
+
+    .contenedor .header .head_cont>p {
+        margin: 0;
+        color: white;
+    }
+
+    .job {
+        border-top: 1px solid rgb(253, 253, 253);
+        font-family: Microsoft Himalaya;
+        font-size: 20px;
+    }
+
+    .contenedor .menu {
+        position: fixed;
+        width: 100%;
+        background: #0DA3D1;
+        height: 25px;
+    }
+
+    .contenedor .menu.menu-hid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-area: menu;
+        grid-template-areas: "u u u menu-bar";
+        justify-items: center;
+        transform: translateX(-75%);
+        transition: all 1s;
+    }
+
+    .contenedor .menu.menu-nohid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-area: menu;
+        grid-template-areas: "menu-bar u u u";
+        justify-items: center;
+        transition: all 1s;
+    }
+
+    .menu-bar {
+        grid-area: menu-bar;
+        color: white;
+        text-align: center;
+    }
+
+    .menutabla {
+        grid-area: u;
+        display: flex;
+        grid-area: u;
+        grid-column: 2 / -1;
+        justify-self: stretch;
+        justify-content: space-around;
+    }
+
+    .menutabla.menu-notogglehid {
+        transform: translateX(0%);
+        transition: all 1s;
+    }
+
+    .menutabla.menu-togglehid {
+        transform: translateX(-150%);
+        transition: all 1s;
+    }
+
+    #menutabla>li {
+        cursor: pointer;
+        list-style: none;
+        color: white;
+    }
+
+    #menutabla>li>a {
+        text-decoration: none;
+        color: white;
+    }
+
+    .contenedor .portafolio {
+        grid-area: portafolio;
+        display: grid;
+        grid-gap: 1px;
+        grid-template-columns: repeat(auto-fill, 1fr);
+        grid-auto-flow: row;
+        justify-items: center;
+        margin-bottom: 10px;
+        font-size: 20px;
+        margin: 10px;
+    }
+
+    .projects {
+        grid-area: projects;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        justify-self: stretch;
+    }
+
+    .projects>div>div {
+        margin: 5px;
+        border-radius: 10px;
+        justify-self: center;
+        background: rgb(113, 102, 126);
+        color: white;
+        border: 1px solid rgb(177, 177, 176)
+    }
+
+    .projects>div>div>img {
+        width: 100%;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+
+    .projects>div>div>p {
+        text-align: justify;
+        color: rgb(255, 255, 255);
+        font-size: 15px;
+        margin: 10px;
+    }
+
+    .projects>div>div>h5 {
+        text-align: center;
+    }
+
+    .contenedor .skills-title {
+        display: grid;
+        grid-area: skills-title;
+        grid-template-columns: repeat(1, 1fr);
+        justify-items: center;
+        font-size: 25px;
+    }
+
+    .contenedor .skills {
+        margin-top: 20px;
+        grid-area: skills;
+        justify-items: center;
+        display: grid;
+        grid-gap: 5px;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        grid-template-areas: "skill skill skill skill" "skill skill skill skill" "skill skill skill skill" "skill skill skill skill";
+    }
+
+    .skills .skill>figure {
+        width: auto;
+        height: auto;
+    }
+
+    .skills .skill>figure>img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .contenedor .contacto {
+        background: #33373F;
+        grid-area: contacto;
+        display: grid;
+        grid-gap: 10px;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(1, auto auto auto auto);
+        justify-items: stretch;
+    }
+
+    .contacto>h5 {
+        margin-top: 10px;
+        color: white;
+        justify-self: center;
+        grid-column: span 2;
+    }
+
+    form {
+        grid-column: span 2;
+        justify-self: stretch;
+    }
+
+    .contacto>form .wrapper {
+        margin-bottom: 10px;
+        justify-self: center;
+        text-align: center;
+    }
+
+    .contacto>form .wrapper .box {
+        justify-self: center;
+    }
+
+    .contacto>form .wrapper>div>input {
+        border-style: none;
+        border-radius: 5px;
+        background: #33373F;
+        border-bottom: 1px solid white;
+        color: white;
+        text-align: center;
+        outline: none;
+        width: minmax(100px, auto);
+        width: 50%;
+        font-size: 12px;
+    }
+
+    .contacto>form .wrapper>div>textarea {
+        background: #33373F;
+        border-style: none;
+        border-radius: 5px;
+        color: white;
+        outline: none;
+        width: 50%;
+        font-size: 12px;
+        border-bottom: 1px solid white;
+    }
+
+    form .btn-cont {
+        text-align: center;
+    }
+
+    form .btn-cont>input {
+        background: rgb(33, 114, 33);
+        border-style: none;
+        border-radius: 5px;
+        color: white;
+        width: 80%;
+    }
+
+    .contenedor .footer {
+        height: 250px;
+        grid-area: footer;
+        background-image: url(../src/assets/img/footer.png);
+        background-repeat: no-repeat;
+        width: 100%;
+        background-size: 100% 100%;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .contenedor .footer>div {
+        margin: 10px;
+        color: white;
+    }
+
+    .contenedor .footer>div>a {
+        margin-left: 10px;
+        color: white;
+        justify-items: stretch;
+        margin-right: 5px;
+    }
+
+    .contenedor .footer>div>a>img {
+        margin: 10px;
+    }
+    /*M
+
+    .contenedor .footer>div>a>img {
+        justify-items: stretch;
+        margin-right: 5px;
+    }
+    /*MediaQueries*/
+
+    @media (min-width: 860px) {
+        body {
+            background: red;
+        }
+    }
